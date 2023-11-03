@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react lecture1</title>
+    <style>
+        p {
+            color: red;
+            font-size: larger;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        h2 {
+            color: blueviolet;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        pre {
+            font-size: x-large;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>What is React js ?</h1>
+    <p>1. React is Javascript Library. <br>
+        2. The main focus is building Ul as fast as possible.<br>
+        3. So this is Used to Single Page Application. <br>
+        4. Means Complete Website in Single Page.<br>
+        page reload nai hota hai to fast hota hai or hum keh sakte hai ki ye SPA hai.<br></p>
+    <h1>Why React js is fast ?</h1>
+    <p>because its uses virtual dom</p>
+    <h1>Why Learn React </h1>
+    <p>1. Maintained by Facebook so it will Long Term Player in the Market.<br>
+        2. Hight Demand due to fast Speed. <br>
+        3. Large Community for your support. <br>
+        4. Mobile App Development with React-Native.<br> </p>
+    <h1>History & Version</h1>
+    <p> 1. Maintained by Facebook. <br>
+        2. First Release on 29 May 2013.<br>
+        3. The current version is ----<br>
+        4. Apps with React is : 1. NetFlix, 2. Whatsapp Web, 3. Instagram 4. Airbnb etc Auto</p>
+    <br><br>
+    <p>note:- • React is Generally used with NPM But we can also use CDN</p>
+    <h1>React js Environment up with Windows </h1>
+    <p>• Install Node and NPM</p> <br>
+    <h2>commands after installing npm</h2>
+    <p>1. cd Desktop/Document . jaha pe project rakhna hai waha ka path<br>
+        2.npm -v . checks version of NPM<br>
+        3.npx -v . checks version of npx.<br>
+        4.mkdir react-tut . document ke andar ek folder bana rahe hai react-tut nam ka<br>
+        5. cd react-tut. react-tut me chale gaye<br>
+        6.npx create-react-app blog . installing CRA with the project name blog<br>
+
+        • VS code editor Install the CRA app<br>
+        cra install success hone ke bad :-<br>
+        7.cd blog . blog me jayenge<br>
+        8. code . . blog ko vs code me kholenge<br>
+        9. npm start . blog project ko run karenge local host : 300 pe. first time jada samay lega<br></p>
+    <h1>what is npm :- node package manager</h1>
+    <p>ye node ke sare package ko manage karta hai. jo node module folder hai us se manage karta hai<br>
+        agar hame validation ya routing etc kisi ka bhi module/package use kara hai to usko node module
+        manage kar lega.<br>
+        we have to just give command :- npm install package-name<br>
+        jab hum code ko producyion me dalte hai to ye code ko mibified kar deta hai .. sab code ko ek
+        file me daal deta hai jis se wo bahut fast or secure ho jata hai kyunki dusre ko ye minified
+        code samajhna bahut mushkil hai.<br>
+        note:- jo pehli file render hoti hai wo index.js hai . app.js ko bhi hum usme import kiye hue hote hai.<br>
+        note:- alternative of npm is yarn.
+    </p>
+    <h1>React js file and folder structure :-</h1>
+    <p>1 package.json:- isme hume file ka naam (blog) , file ka version, sare commands or jitne package(dependencies)
+        dale hote hai wo sab milte hain. this is the most important file of react. react ka version bhi yahi
+        se check kiya jata hai.<br>
+        2. package-lock.json :- ye package.json ki details rakhti hai. package.json me jitne bhi package hote hai
+        un sabka history rakhti hai or unka version control karti hai. package ki dependencies ki bhi history rakhti
+        hai. package.json hamari application ki details rakhti hai or package-lock.json node modules ki
+        package ki tree structure(agar us package ko or kisi dependency ki jarurat hai) me detals rakhti hai.
+        this files contain the most details.<br>
+        3. git ignore:- iska react se koi lena dena nai hai. isme konse file ya folder ko hame git me commit /push
+        nai karna hai uska detail rehta hai.<br>
+        4.src folder :- react ke andar hum jitna bhi kaam karte hai wo sab iske andar rehta hai.<br>
+        app.css = styling ke liye use hota hai.<br>
+        app.js= yaha se hum apna code likhna start karte hai.<br>
+        app.test.js= yaha pe unit test cases likhe jate hai.<br>
+        index.css= use for styling.<br>
+        index.js= ye react ki entry point hoti hai.<br>
+        reportWebVitals.js= ye react application ki performance batati hai. ye index.js me embeded rehta hai.
+        waise iski jarurat utna nai hai to uska hata bhi dete hai bahut log.<br>
+        setupTests.js= jitne bhi test cases likhe jate hai (1 file or more), sab yahi se start hote hai.<br>
+        5. public folder :- public folder html se related details rakhti hai jo react se related nai hai.
+        for example :- fav icon,logo etc.<br>
+        index.html:- yaha hume ek div milega jiski id root hogi. to hum index.js me jitne bhi chij ko render
+        karte hai use hum isi root id wale div me chipka dete hai yani waha par render hota hai. react wala
+        sara component isi div ke andar chalta hai.<br>
+        manifest.json= isko hum meta files kehte hai. ye chhote mote icon rakhti hai, themes rakhti hai.
+        iska use tab hota hai jab hum PROGRESSIVE WEB APP banate hain. basic level pe iska koi use nai hai.<br>
+        robot.txt= isme hum wo file rakhte hai jo hum chahte hai search engine crawl na kare.<br>
+        6. node modules folder :- isme sare packages hote hai .. isi me react ka package bhi hota hai.<br>
+        question1:- sabse impotant file konsa hai react me?<br>
+        ans:-package.json<br>
+        question2:- hum node module ko git me push kyu nai karte hai or jab koi dusra developer use git se lega
+        to usehamara wala node module kaise milega?<br>
+        ans:-isko push isliye nai karte kyunki iska size kafi bara hota hai, isko push karne me bahut time
+        lag jayga. agar dusre developer ko iska node module chaiye hoga to wo command chalayga - npm install,
+        ye command package.json se dependencies uthayga ki achha mujhe ye wali library chahiye to wo usko
+        install kar dega or jo is dependencies ka internal dependency hai usko bhi install kar dega.
+        agar aap pehle se wo chij install kar rakhi hai to usko wo install nai karega . ye check karega
+        ki konsa naya chij hai jo install karna hai or bas usi ko install karega jo install nai hai.<br>
+    </p>
+    <h1>package.json file in detail:-</h1>
+    <h2>what is package.json</h2>
+    <p>ye project ki sari details rakhti hai project ka naam, version,iske andar konsi konsi
+        command use ho rahi hai,konsi konsi dependecies hai,</p>
+    <h2>how to add new npm package </h2>
+    <p>manlo ki hume koi naya package install karna hai jaise routing,validation, koi google ki library install
+        karni hai to wo hum kaise kar sakte hai.?<br>
+        manlo hume react validation library install karni hai to 2 tarike hai.<br>
+        1. google pe ja kar react validation search karo, waha install ka code diya hoga usko command prompt
+        pe chala do to wo install ho jayga. jaise wo install hoga to wo hume package.json file ke dependencies
+        me dikhne lagega. uska hum specific version bhi install kar sakte hai jab google karenge to version bhi
+        hoga waha par.<br>
+        2. koi bhi specific version install karna ho to usko dependecy me likh do jaise abhi 3.7 version install
+        hai or hame 3 version install karna hai to 3.7 ke jagah 3.0 likh kar command chala do npm install.
+        npm install dekhega kitna naya dependency hai usko install kar dega.<br>
+    </p>
+    <h2>remove npm package</h2>
+    <p>isko bhi 2 tarike se kar sakte hai<br>
+        1. wahi google karke jo install ka code hai us se pehle npm uninstall likh do<br>
+        2.package.json ke dependecies se usko hata do or command karo npm install to wo check karega
+        or jo pbhi extra hoga package.json ke dependencies se usko remove dega. </p>
+    <h2>custom commands</h2>
+    <p>package.json me jo script me start karne ka command diya hai "start" uso change karke vishal karna hain
+        to hum start ki jagah vishal likh denge waha. ab hum apne blog project ko "npm run vishal" command se
+        start kar sakte hai. remember custom command me run lagana jaruri hai.<br>
+        <br>
+        question:- react me kitne type ke components hote hai ?<br>
+        ans:-iska koi fixed type nai hai. sab apne hisab se number of type bataa hai. ye sab kuchh impotant type hai
+        • Functional Component <br>
+        • Class Component <br>
+        • HOC (Hight order component <br>
+        • Pure Component <br>
+        Controlled Component<br>
+        Uncontrolled Component<br>
+    </p>
+    <h1>Components in react js</h1>
+    <h2>what is component</h2>
+    <p>• A piece of code that can reuse <br>
+        • Such as Function <br>
+        • But more powerful than function . kyunki iska apna state hota hai , lifecycle hota hai,props send kar sakte
+        hai<br>
+        • Header, Footer is best example. header ya footer component ko ek bar bana kar har page me use kar sakte
+        hai<br>
+    </p>
+    <h2>type of components </h2>
+    <p>iska koi fixed type nai hai. sab apne hisab se number of type bataa hai. ye sab kuchh impotant type hai
+        • Functional Component . banane ke hisab se hum 2 type ke component banate hai ya to wo class component
+        hoga ya functional component.<br>
+        • Class Component <br>
+        • HOC (Hight order component <br>
+        • Pure Component <br>
+        Controlled Component<br>
+        Uncontrolled Component<br>
+
+    </p>
+    <h2>exampleof components</h2>
+    <p>1. sabse pehle ek file bana lo User1.js . uske andar ek function bana lo User1 naam ka.<br>
+        for best practice 1st letter file ka hamesha capital rakhna chahiye<br>
+        2.jab bhi hum functional component banayge to usme return aayga hi aayga.<br>
+        3. return ke andar ek h1 tag banao or kuchh bhi likh do. note:- agar hum h1 tag ya koi or tag
+        likh rahe hai to fir ek tag ke bad hum dusra tag use nai kar payenge error show hoga isliye hum sabko
+        ek div tag ke andar rakhte hai. ek div tag ke andar hum kita bhi tag likh sakte hai.<br>
+        4. ab is function ko use karne ke liye export karna hoga :- "export default User1" likh kar last me<br>
+        5. ab isko app.js me import karna hoga :- "import User1 from './User1';" likh kar<br>
+        6. ab function app me jo div hai uske andar user1 ko return karwa do jis se ki hum User1 component ko use
+        kar sake. :-
+        < User1 /> ya User1 open and User1 close html se.<br>
+        ab usi User1 ko 3 bar return karwa do to wo reuse ho gaya component<br>
+        see User1.js , it is a functional component.<br>
+        export karne ka 2nd way hai ki function se pehle export likh do :- export function User1(){} .
+        or import karte wakt user1 ko {} me dal do .:- "import {User1} from './User1';"<br>
+        export default ek hi component ko kar sakte hai agar ek hi file me hum 2-3 function likhe hai to
+        usko 2nd way se export karna hoga.<br>
+        is component ko hum bina export kiye bhi use kar sakte hai. uske liye function User1 ke pure code ko
+        copy karke jaha app.js function khatam ho raha hai waha pe paste kar do to bhi use ho jayga. lekin
+        generally alag se hi component banana chahiye.<br>
+        ek 3rd way bhi hai jisme last me export {User1} likh ke bhi export kar sakte hai. waise 2nd or 3rd way same hai.
+        <br>
+    </p>
+    <h1>Class Component </h1>
+    <p>class component same file me bhi bana sakte hai ya alag file me bhi bana sakte hai.</p>
+    <h2>• What is Component</h2>
+    <p>• A piece of code that can reuse <br></p>
+    <h2> • Make Class Component</h2>
+    <p>step1:- import React from'react'<br>
+        step2:- class User2 extends React.component<br>
+        2nd way step 1:- import React,{component} from 'react'<br>
+        ab ye class ke block ke andar step3:- render(){return(tagopen>write something tagclose> )}<br>
+        step 4:- class se pehle export default likh do . last me bhi export default likh sakte hai<br>
+        step5:- isko app.jsme import kar lo <br></p>
+    <h1>JSX with React </h1>
+    <h2>• Javascript xml (JSX) </h2>
+    <p>JSX madad karta hai html likhne me wo bhi javascript file ke andar. generally hum javascript file me html
+        nai likhte hai lekin JSX ke madad se likh sakte hai.</p>
+    <h2>• Write HTML and javascript together </h2>
+    <p>we can write html and javascript in single file using jsx.</p>
+    <h2>• Use Like HTML or XMLtags </h2>
+    <p>jsx is similar to html.</p>
+    <h2>React without JSX</h2>
+    <p>we can also write html without jsx but it becomes very complicated. react import karna parega etc.</p>
+    <h1>Click Event and Function </h1>
+    <h2>How to make click event</h2>
+    <p>app.js me app function ke andar ek naya function banao or us naya functin me alert karke kuchh likh do.
+        uske bad return me button banao or onclick ka event add kar do us button me.<br>
+        2nd way:- User.js ka ek file banao.<br>
+        usme User3 naam ka function banao<br>
+        User3 function ke andar ek naya function banao apple naam se. apple function me alert kar do kuchh bhi text.<br>
+        ab User3 ke return me ek button banao<br>
+        button me onclick event add karo or us event me aplle function ko call kar lo.<br>
+        ab User3 ko export kar do or app.js me import kar do or app function e return me User 3 ko bhi likh do.<br>
+    </p>
+    <h2>• Call function in the button click </h2>
+    <p>1st way:-agar hum on click me function apple ko call karte hai to apple ke bad paranthesis nai lagana hai nai to
+        wo apne aap call ho jayga.<br>
+        < button onClick={apple}>click me< /button><br>
+                uper hum paranthesis nai lagaye hai,
+    </p>
+    <p>2nd way:- hum direct alert ko onclick event me daal sakte hai bina koi apple naam ka function banay.<br>
+        uske liye hume arrow function use karna hoga.<br>
+        < button onClick={()=>alert('alert without any function')} >click me< /button><br>
+    </p>
+    <p>3rd way:- hum apple ke sath parenthesis ka bhi use kar sakte hai lekin uske liye arrow function ka use
+        karna hoga kyunki arrow function khud se call nai hota hai<br>
+        < button onClick={()=>apple()}>click me< /button>
+    </p>
+    <h2>• Variable in functional Component</h2>
+    <p>hum variable ko declare kareke jab uska value change karte hai react me to wo har jagah change nai hota hai.
+        ye hum dekh sakte hai user4 me. isliye hum react me state or props ka use karte hai value change karne ke
+        liye. direct variable declare nai karte hai.
+    </p>
+    <h1>State in Functional Component </h1>
+    <h2> • What is state</h2>
+    <p>state ek object hota hai. jaise hum variable me data store karte hai waise hi state me bhi data store karte hai.
+        variable ka use hum isliye nai karte kyunki wo component ko update nai karta hai. wahi dusri taraf jaise hi
+        state update hota hai to component ko pata chal jata hai or component bhi update ho jata hai.<br>
+        <b>note:- react apne component ko hamesha tab hi update karta hai jab use uska state ya props change milta hai.
+        </b><br>
+        jab state ya prop change milta hai tab hi reacr apne component ko re render karta hai, yani componenet fir
+        se update hota hai.<br>
+
+    </p>
+    <h2> • Use of state </h2>
+    <p><b>note:- react apne component ko hamesha tab hi update karta hai jab use uska state ya props change milta hai.
+            variable use karne pe component re render nai hota hai freeze hi rehta hai isliye hum state ka use karte
+            hai.</b>
+    </p>
+    <h2>• Define state</h2>
+    <p>state ko define karne ke liye pehle hume use state ko import karna hoga.<br>
+        import { useState } from "react";<br>
+        use state ek hook hai jo state change karne me help karta hai<br>
+        let[data, setData]=useState('vishal'); karke jo likhe haiuse destructuring kehte hai .or aise hi state
+        define hota hai . setState ke jagah kuchh bhi likh sakte the.. uska use data ka value change karne
+        ke liye use karenge.<br>
+    </p>
+    <h2>• Update state with a Button click</h2>
+    <p>User5 function ke andar ek naya function banakar update state naam se usko return ke button me
+        onclick event par call kar sakte hai. jo naya fuction banaye hai uske andar hum state change kar sakte hai.
+        setData('singh') ka use karke.<br>
+        aise hum kitna bhi function bana kar state change kar sakte hai.<br>
+        hum bina function banay bhi button ke onclick event me direct setDate ka use kar sakte hai arroe function
+        ka use karke<br>
+
+    </p>
+    <h2>• How state work </h2>
+    <p> jab state ya prop change milta hai tab hi reacr apne component ko re render karta hai, yani componenet fir
+        se update hota hai.</p>
+    <h1>State in Class Component </h1>
+    <h2>• Make Class Component</h2>
+    <p>follow the stepsof making class component from above.</p>
+    <h2>• What is state</h2>
+    <p>state ek object hota hai. jaise hum variable me data store karte hai waise hi state me bhi data store karte hai.
+        variable ka use hum isliye nai karte kyunki wo component ko update nai karta hai. wahi dusri taraf jaise hi
+        state update hota hai to component ko pata chal jata hai or component bhi update ho jata hai.</p>
+    <h2>• Define state</h2>
+    <p>sabse pehle constructor banayenge<br>
+        uske bad super() ko call karenge.<br>
+        uske bad this.state nam ka ek object banayenge or us object me data nam ka ek property(key:value) dal denge
+        data naam ka. as u can see in user7<br>
+        ab isko return me h1 tag ke andar access kar lenge {this.state.data} likh kar.
+    </p>
+    <h2>• Update state with a Button click</h2>
+    <p>constructor jaha khatam ho raha hai waha ek function bana lo aplle naam ka<br>
+        us function ke andar setState se data ka value change karke vishal kar do.<br>
+        or num ka setState use kar ke this.state.num+1 kar do<br>
+        ab return me ek button bana lo or us button pe onclick event laga kar function ko call kar lo<br>
+        note:- class component me hamesha arrow function use karna hi parega nai to wo apne aap call ho jayga<br>
+        this.setState({data:'vishal'});<br>
+        this.setState({num:this.state.num+1});<br>
+        note:- state hamesha public hoti hai.<br>
+        class componenet me hum usestate hook ka istemal nai karte hai kyunki wo pehle se statefull component hi hota
+        hai.<br>
+    <h1>Props with Functional Component </h1>
+    <h2>• What are props </h2>
+    <p>jaise hum function banate hai or usme argument lekar usme kuchh data pass karte hai, waise hi hum component
+        me agar koi data pass karna chahe to wo props ke madad se kar sakte hai.<br>
+        props ka pura matlab property hota hai or props ko hum component me pass karte hai.<br>
+
+    </p>
+    <h2>• Use of props</h2>
+    <p>manlo hume 50 student ka detail print karwana hai to hum app.js ke return se student me props pass kar sakte hain
+        or usko ek function student 8 me pass kar sakte hai as a argument. hum jitna chahe utna props pass kar kar sakte
+        hai app.js me<br>
+    </p>
+    <h2>• Example with functional component </h2>
+    <p>hum aise app.js me pass karenge :-<br>
+        < Student8 name={'anil'} email='anil@test.com' other={{address:"delhi",mobile:'0000'}} /><br>
+        aise hum kitna bhi student pass kar sakte hai.<br>
+        student8 function me as as argument props pass kar denge or fir usko return me access kar lenge
+        h1,h2,h3 tag me.<br>
+        for example h1 ke andar likhenge {props.name}, ya {props.email}, ya
+        {props.other.address}<br>
+        reference= student8
+    </p>
+    <h2>• Update props on Button click</h2>
+    <p>isko ek bar fir dekho.. app.js me hi kyu props ka state set karna par raha hai.. alag se kyu nai kar
+        user9 me kyu nai kar sakte?<br>
+        ans:- props ko hamesha app.js se hi change kar sakte hai student9/10 se nai<br>
+    </p>
+    <h1>Props with Class Component </h1>
+    <h2>• What are props</h2>
+    <p>jaise hum function banate hai or usme argument lekar usme kuchh data pass karte hai, waise hi hum component
+        me agar koi data pass karna chahe to wo props ke madad se kar sakte hai.<br>
+        props ka pura matlab property hota hai or props ko hum component me pass karte hai.<br>
+    </p>
+    <h2>• Use of props</h2>
+    <p>manlo hume 50 student ka detail print karwana hai to hum app.js ke return se student me props pass kar sakte hain
+        or usko ek function student 8 me pass kar sakte hai as a argument. hum jitna chahe utna props pass kar kar sakte
+        hai app.js me<br>
+    </p>
+    <h2>• Example with class component</h2>
+    <p>app.js me wais hi likhenege jaise ki functional component me props pass karte the.<br>
+        Student10.js me ek class banayenge jo extends karega React.component pe<br>
+        fir render me console.log(props) likh kar check kar sakte hai ki kya kya props pass ho raha hai.<br>
+        render se pehle console.log(); nai kar sakte kyuki usko functin ke andar hi karna hota hai.
+        hum constructor bana kar console.log(); kar sakte hai.<br>
+        return me hum h1 tag ke andar this.props.name likh kar use access kar sakte hai.<br>
+    </p>
+    <h2>• Update props on Button click</h2>
+    <p>import React from 'react' <br>
+        class App extends React.Component { <br>
+        constructor () { <br>
+        super(); <br>
+        this.state={ name : "Anil" }<br>
+        }<br>
+        render() <br>
+        { <br>
+        return ( <br>
+        < div className="App"><br>
+            < h1>Props !</ h1> <br>
+            < Student name=this.state.name} email="anil@test.com" /><br>
+            < button onClick={()=>this.setState({name : "Sidhu"}}} <br>
+            </ div> <br>
+            );<br>
+            see student10.js<br>
+    </p>
+    <h1>Get Input box value </h1>
+    <h2>• Make Input field </h2>
+    <p>make a input filed within return of Input11.js </p>
+    <h2>• Make function and get Value</h2>
+    <p>ek function banao getdata naam se input11 function ke andar .<br>
+        us function ko input field jo return ke andar render ho raha hai usme call kar lo onChange event par.<br>
+        getdata function me argument dall do e ya koi or naam se. us function ke andar console.log karoge jab
+        e.target.value ko to wo jo bhi type karoge input field me wo dikhega console me.<br>
+        lekin hame to wo screen me print karwana hai isliye hum state banayenge data naam se or initial value ko
+        null kar denge , see input 11. ab uska state ko change karenge getData function ke andar or uska value
+        set kar denge e.target.value<br>
+        ab input field ke uper ek h1 tag lenge or usme {data } ko print kar denge.
+        jo bhi type hoga input me wo hame dikh jayga uske uper.</p>
+    <h2>• Make button and state </h2>
+    <p>ab hum chahte hai ki button click pe dikhe hume type kiya hua value aise na dikhe.<br>
+        sabse pehle hum Input12 ke return me button banayenge input field ke niche print data naam se.<br>
+        ab ek state banayenge print naam se or uska initial value false rakh denge.<br>
+        ab button pe onclick event banayenge or usme print ka state ko set kar denge true me.
+        <br>
+        ab isko print karwane ke liye hum ternary opertor ka use karenge.<br>
+        agar print ka value true hai to h1 tag ke andar {data} ko print kar do warna null kardo agar false hai to.
+        is se pehle waka h1 tag hata denge jo Input11 me use hua tha.<br>
+        agar hum chahte hai ki jaise ji ek bar button pe click ho uske bad data print ho jane ke bad agar firse koi
+        kuchh type karta hai input field me to uper h1 tag me jo pehle ka print kiya hua dikh raha hai wo hat jaye
+        to uske liye jo getdata function hai usme setPrint ko false kar do jis se ki jaise hi onchange pe ye function
+        call hoga waise hi print ka value false ho jayga to data dikhna band ho jayga.
+    </p>
+    <h2>• Get value on Button Click</h2>
+    <p>just iske uper explain kiya hun. reference ke liye Input12 ko dekho.<br>
+        questin:- kya hum propd me html pass kar sakte hai?<br>
+        ans:- haan kar sakte hai.<br></p>
+    <h1>Hide and Show Element (Toggle :- jab ek hi button se hide and show karwate hai to use toggle bolte hai.) </h1>
+    <h2>• Make A div or any other element</h2>
+    <p>function toggle13 me hum ek h1 tag return kar rahe hai jisme hello likha hai<br>
+        uske bad hum 2 button bana rahe hai ek hide ka dusra show ka.</p>
+    <h2>• Make State for hiding and show element </h2>
+    <p>hum ek state bana rahe hai status naam se or uska initial value true rakh rahe hai.<br>
+        ab hide wale button pe uska state ko onclick event pe false set kar rahe hai.<br>
+        ab show wale button pe uska state ko onclick event pe true set kar rahe hai. <br>
+        ab jo h1 tag return ho raha hai usko ternary operator me dalenge ki agar state true hai tab hi h1 tag ko
+        dikhao or false me null kar do.<br>
+        is se show pe click karne se true ho jayga or dikh jayga h1 or hide pe false ho jayga to nai dikhega.<br>
+    </p>
+    <h2>Make Button</h2>
+    <p>ab hum chahte hai ki ek hi button se show or hide ho yani ki toggle ho.<br>
+        iske liye hum toggle 14 function me ek button return karwayenge.<br>
+        button ke uper ek h1 tag return karwayenge jisme hello likha hoga jisko ki toggle karwana hai<br>
+    </p>
+    <h2>• Update state on button click</h2>
+    <p>ab hum ek status naam ka state banayenge jiska initial value true hoga.<br>
+        button pe ek onlclick event use karenge jisme ki status ke state ko set karenge <br>
+        status ke state ko aise set karenge ki jo abhi uska current status hai uska opposite ho jay click karne par<br>
+        waisa karne ke liye hum set status me status se pehle not(!) ye laga sakte hai.<br>
+        setStatus(!status)<br>
+        bas ab ho gaya toggle . reference ke liye toggle 14 ko dekho.<br>
+        note:- agar hum bas React ko import karte hai to state ka initial value dene ke liye hume React.UseState()
+        ko use karna parega.<br>
+        hum arrow function bhi use kar sakte hai functional component banane ke liye .</p>
+    <h1>Basic Form </h1>
+    <h2>• Make HTML form </h2>
+    <p>sabse pehle ek html form banao form tag se forms15 function ke andar.<br>
+        usme ek text type ka input field banao jisme user apna naam likhe<br></p>
+    <h2>• Add some field</h2>
+    <p>kuchh or input field banao jaise selection, checkbox <br>
+        ek submit button banao jis se ki form ka data ko submit kar pao<br>
+        abhi hum dekh sakte hai ki jaise hi submit pe click kar rahe hai waise hi page refresh ho ja raha hai.
+        jabki react ek single page application hai isme page refresh nai hona chahiye to hum pehle use rokte hai<br>
+        use rokne ke liye hum form tag me onSubmit event pe ek function ko call karenge getData naam se.<br>
+        us getData function me hum e argument pass karenge or e.preventDefault kar denge yani event(submit) hone pe jo
+        by default refresh ho raha tha use rok denge.<br>
+    </p>
+    <h2>• Use state for field data</h2>
+    <p>ab input field ke data ko lene ke liye hum state banayenge .<br>
+        hum 3 state banayenge :- name , choice and tc. ab in teeno ko inke resprctive tag me obChange event par
+        state ko set karenge . on change event pe ek argument pass karenge "e" ya kuchh or . uske bad set state me
+        respectively e.target.value , e.target.value , e.target.checked ko set kar denge. <br>
+        checkbox me .checked karte hai kyunki ye true ya false me value return karta hai.<br>
+        hum chahe to 3 alag alag function bana kar usme sabka state ko set karke wo sab function ko bhi onChange pe
+        click kar sakte the . lekin aise karne se hume 3 function nai banana para.<br>
+        ab hum getData function jo onsubmit pe call ho raha hai usme consolelog karke dekhe ki sare state ko ki
+        wo hume mil raha hai ya nai.<br>
+        hum chahe to sab detail ko print bhi kar sakte hai . uske liye hume ek state or banana parega print
+        naam se or uska inital state false karna parega . fir getData function jo onsubmit pe call ho raha hai
+        waha par is state ko true set kar denge .<br>
+        uske bad ternary opertor se h1 tag me sab detail ko print karwa kar denge agar print ka state true raha to.
+        yani jaise hi user submit pe click karega use dikh jayga sab detail.
+    </p>
+    <h2>• Submit and control form</h2>
+    <p>isko getData function me preventDefault karke or use onsubmit pe click karke control kar liye bar bar
+        refresh hone se.<br>
+        or control ke liye hum input text me value={name} bhi de sakte hai . iska fayda tab hoga jab clear button
+        bhi hoga.
+    </p>
+    <h1>Conditional rendering | If Condition </h1>
+    <h2>• Make Component </h2>
+    <p>ek condition16 naam se component banaye hai</p>
+    <h2>• Use State</h2>
+    <p>usme islogin naam ka ek state banaye hai or uska initial value false rakhe hai<br>
+    </p>
+    <h2>• Not Recommended Way for condition </h2>
+    <p>hum normally if else jo likhte hao wo recomended nai hai kyunki usme bar bar hume retirn karwana parta hai.<br>
+        agar else if use kar rahe hai to or bhi bahut bar return karwana parega.</p>
+    <h2>• Correct way condition</h2>
+    <p>ternary operator use karna recomended hai kyunki bas ek bar return karwana parta hai.<br>
+        ternary operator ke help se hum elseif bhi likh sakte hai. see line 28 of Condition.js<br>
+        hum ek hi button ke onclick event par 2,3 ya kitna ka bhi state change kar sakte hai. see line 25<br></p>
+    <h1>Pass Functions as Props</h1>
+    <p>function ko as a props pass karne ka fayda ye hai ki ek hi function ko parent me define karke
+        use bahut sare child me pass kae sakte hai.<br>
+        agar hume ek hi function ko alag alag component me use karna hai to use parent me define karke
+        har child component me as a props pass kar sakte hai. fir example hum fetFunction ko or bhi
+        component me pass kar sakte hai. agar hamre pass or component hai manlo member1,member2 etc.
+        to hum use wo sare component me as a props pass kar sakte hai.<br>
+        jo function hume as a props pass karna hai use hamesha parent component me define karna hota hai.<br>
+        reference ke liye lec17 and 18 dekho.<br>
+        agar hum superchild (yani Propsfinction17 ka ek child component) banate hai to waha bhi is function
+        ko as a props pass kar sakte hai.<br>
+    </p>
+    <h1> LifeCycle method in React</h1>
+    <img src="lifecycle.png" width="1200px" height="500px">
+    <p>react lifecycle me 3 phase hote hai:- 1. mounting:when componenet is loaded<br>
+        2. updating : when component is updated with state and props <br>
+        3. Unmounting: when component is removed <br>
+        life cycle METHOD jada hote hai.<br>
+        question : agar hum kisi component ko hide(unmount) karke dubara se show(mount) karenge to naya lifecycle start
+        hoga
+        ya purana wala hi fir se chalega?<br>
+        answer: fir se naya lifecycle chalega kyunki component dubara se mount hoga.<br>
+    </p>
+    <h1>mounting Phase</h1>
+    <h1>Constructor Life Cycle Method </h1>
+    <h2>• What is constructor? </h2>
+    <p>constructor ek life cycle method hai.<br>
+        jaise hi koi class banta hai kisi bhi class ka to usi wakt sabse pehle constructor call hota hai.
+        isiliye ye sabse pehla life cycle method hai.<br></p>
+    <h2>• Why this is important? </h2>
+    <p> ye isiliye important hai kyunki html render hone se pehle hi constructor call ho jata hai.</p>
+    <h2>• what we can do in this life cycle method? </h2>
+    <p>html render hone se pehle constructor call ho jata hai isiliye isme hum 1. State declare kar sakte hai<br>
+        2. event binding kar sakte hai.<br>
+        yaha hum kabhi bhi api call nai karte hai kyunki html render ho kar ready hi nai hoga jaha hume api se
+        kuchh show karwana hai.<br>
+        question : kya hum props ko constructor lifecycle me recieve kar sakte hai ? kyunki wo apne parents se aa raha
+        hai.<br>
+        answer: haan kar sakte hai. constructor me this.props ko console.log karo. mil jayga.
+    </p>
+    <h1>Render, Life cycle method </h1>
+    <h2>• Use of render Method. </h2>
+    <P>render ka hindi meaning hota hai prastut karna.<br>
+        render ka meaning yaha hai ki ececute karke present kar do.<br>
+        class componenet me hum render use karte hai. or jitna bhi html/jsx hum likhte hai wo iske andar hi likha jata
+        hai.<br>
+        jab bhi koi state ya props update hoga to render method apne aap run ho jata hai yani re render ho jata hai.<br>
+        render method 3 bar run ho sakta hai. pehla jab component ready hoga yani mount hoga. 2nd jab koi state update
+        hoga. 3rd jab koi props update hoga.<br>
+    </P>
+    <h2>• Make Class component. </h2>
+    <p>ek class component banao renderlife20 naam se</p>
+    <h2>• Use state and props with render.</h2>
+    <p>constructor me ek state banao email naam se.<br>
+        usko return me ek h1 tag me show karwao.<br>
+        ab ek button banao or onclick event par uska state change karo.<br>
+        hum app.js me ek state bana kar usko props me pass karke or button bana kar onclick pe uska state bhi change
+        kar sakte hai. lekin ye sab parent component me hoga.<br>
+        state change hone ke bad bhi re render kyu ho raha hai?=doubt<br>
+    </p>
+    <h1>component Did Mount, Life cycle method </h1>
+    <h2>• Use of component Did Mount Method. </h2>
+    <p>component did mount jab html dom render ho kar ready ho jata hai tab hi call hota hai.<br>
+        matlab pehle constructor method call hoga fir render method se sara html render ho jayga. uske bad ye call hoga.
+        <br>
+        use:- koi bhi operation jo html ready hone ke just bad karwana hai wo hum yaha karwayenge.<br>
+        for ex= api call karwana hai to usko hum yaha karwayenge kyunki agar html load hi nai hoga or api ko Call
+        kar lenge to hamara code break ho sakta hai.<br>
+        koi bhi chij hide and show karwana hai to usko hum yaha karwayenge.<br>
+        jo bhi chij html pe dependent rehti hai use hum component did mount pe call karte hai.<br>
+    </p>
+    <h2>• Make Class component.</h2>
+    <p>ek class component banao or constructor ke niche render se pehle component didmount method banao or teeno me
+        console.log kar ke dekho ki kon pehle call ho raha hai.<br>
+        call= constructor-render-didmount<br>
+    </p>
+    <h2>• No Effect of state and props.</h2>
+    <p>ab ek state banao constructor me or uska state change karo on click event par ek butoon bana kar.<br>
+        ab consolekarke dekho jab click karke state change karoge to bas render ka console.log re render hoga .
+        constructor or did mount re render nai hoga.<br>
+        isliye hum api ko yaha call karte hai taki state update ho to bhi bar bar api ko call na karna pare.<br>
+        refer lec 21<br>
+    </p>
+    <h1>UPDATING PHASE</h1>
+    <h1>component Did Update, Life cycle method </h1>
+    <h2>• Use of component Did Update Method. </h2>
+    <p>jab bhi koi state ya props update hoga to ye chalega.<br>
+        agar kisi bhi state ya props ke update hone par koi event karwana hai to usko hum yaha likh sakte hai.<br>
+        kabhi bhi state ko component did update me mat change karna nai to infinite loop ban jayga.<br>
+        agar karna ho to koi comdition dekar hi karna taki wo loop se nikal jaay. waise karna hi nai hai.<br>
+    </p>
+    <h2>• Make Class component.</h2>
+    <p>ek class component banao or constructor ke niche render se pehle component didupdate method banao or teeno me
+        console.log kar ke dekho ki kon pehle call ho raha hai.<br>
+        call= constructor-render<br>
+        didupdate call nai ho raha hoga kyunki wo bas state ya props change hone pe hi call hota hai.<br>
+    </p>
+    <h2>• Use with state and props.</h2>
+    <p>ab ek state banao constructor me or uska state change karo on click event par ek butoon bana kar.<br>
+        ab console karke dekho jab click karke state change karoge to render ka console.log re render hoga
+        or componend didupdate ka . constructor or re render nai hoga.<br>
+    </p>
+    <h2>• Previous state and props.</h2>
+    <p>hum didupdate me prestate , preprops and snapshot ye 3 parameter pass kar sakte hai.
+        naam prestate ye sab rakhna jaruri nai hai kuchh bhi rakh sakte hai.<br>
+        iska fayda ye hai ki hum condition laga sakte hai agar previous state or current state
+        same hai to hum user ko kuchh msg de sakte hai.<br>
+        ahar bas pre state ko console karenge to object ka sab property ka previous state dega.
+        agar particular object property ka previous state chahiye to prestate.company karke le sakte hai.<br>
+        agar hum did update me state change karenge to wo infinite loop me chala jayga or stack ka memory
+        full ho jayga. isliye waha state ko change nai karna hai. agar karna bhi hai to condition ke sath.<br>
+        for ex= agar ek count naam se state banate hai with initial value=0 . or did update me uska state change karke
+        this.state.count+1 kar dete hai to wo infinite loop me chala jayga or memory full ho jayga.isliye hum
+        condition laga sakte hai ki if count< 10 tab state change karo. us se loop ko break point mil jayga.<br>
+            third parameter snapshot ko console karenge to undefined aayga kyunki uska use
+            hum "getSnapShotBeforeUpdate()"
+            method use karne ke bad hi kar sakte hai.<br>
+            question:- kya hum render method me state ko change kar sakte hai?<br>
+            answer: nai kar sakte kyunki render method bar bar call hota hai to state infinite loop me chala jayga.<br>
+            refer lec 22<br>
+            <br><br>
+            note :-SHAYAD:- didupdate me state change pe value same rehne pe bhi render call hoga lekin useeffect me jab
+            didupdat use karenge to wo state ka value same hone par re render nai hoga .<br>
+    </p>
+    <h1>shouldComponentUpdate Life Cycle Method </h1>
+    <h2>• When shouldComponentUpdate called and Use.</h2>
+    <p>ye aapse question puchhta hai aapko component update karna hai ya nai. or aap isme condition laga sakte
+        ho ki aapko kab component ko update karna hai.<br>
+
+    </p>
+    <h2>• It can stop rendering.</h2>
+    <p>iska default value false rehta hai . jab tak ye false rahega tab tak ye rendering ko stop kar dega.<br>
+    </p>
+    <h2>• Use with state and props.</h2>
+    <p>ek state banao count naam ka or usko update karo button pe ek onclick event laga kar<br>
+        agar bas should component update likh kar uska value default rehne de to
+        ye console me update to ho raha hai lekin ui me nai dikh raha hai kyunki iska default value
+        false hota hai.<br> jab value false hoga to ye render nai hone dega component ko or ui me updation nai dikhega.
+        <br>isko dekhne ke liye (render karwane ke lie)hum return true karwa sakte hai ya koi condtion pe true
+        karwa sakte hai.<br>for ex= agar count ka value 5 se 10 ke bich me hai tab hi render karo .
+        abhi console me render ka console bhi nai dikh raha haikyunki render nai ho raha hai.<br>
+        <br>
+        return true;<br>
+        <br>
+        ab ye har bar render hoga kyunki isko true return kar rahe hai.<br> hum kisi condition pe bhi true karwa sakte
+        hai
+        is se application ka performance badhta hai. agar return false karenge to default ke jaisa hi behave karega.<br>
+        <br>
+
+        if(this.state.count>5 && this.state.count< 10){ return true }<br>
+            note:- iska value false karne se component didupdate bhi render nai hoga. kyunki ye component
+            didupdate se pehle call hota hai.<br>
+            question:- kya component didupdate me hum api call kar sakte hai?<br>
+            answer:- haan karwa sakte hai . lekn tab karwaya jata jab hame conditional call karna hota hai api ko.<br>
+            for ex= koi state change hone pe agar kisi api ka need hai to call karwa sakte hai.<br>
+            refer lec 23<br>
+    </p>
+    <h1>UNMOUNTING PHASE</h1>
+    <h1>componentWill Unmount Life Cycle Method </h1>
+    <h2>• When component will unmount called. </h2>
+    <p>jab bhi hum kisi chij ko hide karwate hai to uska css se display none nai hota hai. wo dom se pura
+        remove ho jata hai.<br>
+        hide karne par component will unmount call hota hai. lekin fir jab show karte hai to nai hota hai
+        kyunki us time wo remove nai hota hai.<br>
+        note:- ye component ke remove hone se just pehle call hota hai. alert me dekh sakte ho.<br>
+        isko dekhne ke liye hume 2 component bana na parega or ek (child)component ko remove(hide) karna hoga.
+        see 2 component of lec 24.<br>
+
+    </p>
+    <h2>• Example of component will unmount.</h2>
+    <p>see lec 24<br> hum 2 component bana rahe hai or child component ko hide(remove/unmount) karwa
+        rahe hai parent component ke button se. or hum console or alert me dekh sakte hai ki will
+        unmount call ho raha hai component remove hone par.<br></p>
+    <h2>• Use of component will unmount.</h2>
+    <p>koi api call kiya hua hai usko hum yaha par cancel kar sakte hai.<br>
+        koi set time interval lagaya hua hai wo chale ja raha hai usko yaha se hata sakte hai component
+        remove hone par<br>
+        hum chahe to koi bhi event koi bhi function ko yaha par call kar sakte hai<br>
+    </p>
+    <h1>Hooks in React Js </h1>
+    <h2>• What are hooks in ReactJs </h2>
+    <p>With Hook, we can use class component features in functional components such as state, life cycle,
+        pure component, etc<br>
+        hooks ko pata karne ka aasan tarika hai ki jaha bhi use aa jaye uske bad kuchh bhi likha ho wo ek
+        hook hota hai.<br>
+    </p>
+    <h2>• How to use them</h2>
+    <p>har hook ko use karneka tarika different hai. yaha hum usestate hook ka use karke dekh sakte hai.</p>
+    <h2>• Example of React Hooks with useState</h2>
+    <p>ek state banao usestate hook se or state change karke dekho<br>
+        no reference. example nai kiya kyunki aasan hai.</p>
+    <h1>useEffect hook in React Js </h1>
+    <h2>• What is useEffect</h2>
+    <p>useEffect hook ka istemal hum functional component me lifecycle achieve karne ke liye use karte hai.<br>
+        ye hook akele hi componentDidmount(),componentDidupdate() and componentWillUnmount() method ka
+        kaam karta hai.<br></p>
+    <h2>• How to use useEffect</h2>
+    <p>useEffect me hum condition laga sakte hai ki bas didmount par iska use kar sakte hai, agar
+        4 state hai to kis state ke update hone pe useEffect run hoga. sabke updatehone pe ya kisi ek ya 2 ke
+        update hone pe ya chahe to willunmount pe bhi run karwa sakte hai.<br>
+        ek component ke andar hum jitna chahe utna useEffect hookbana sakte hai or alag alag condition pe
+        alag alag kaam karwa sakte hai<br>
+    </p>
+    <h2>• Example of useEffect</h2>
+    <p>sabse pehle ek component banao effect25 naam se<br>
+        uske baad react import karo ya fir usestate or useeffect import karo taki use kar pao dono hooks ko<br>
+        ab main function ke andar ek state banao count naam se or initial value set kar do 0.<br>
+        return me ek h1 tag me us count ko show karo or ek button bana kar us count ko update karo onclick event par<br>
+        ab state ki bad me ek useeffect hok bano or usme console.log kar do "effect called"<br>
+        ab console karo or page refresh karke dekho sabse pehle ek effect called milega 1 bar wo did mount ka hai.<br>
+        ab button pe click karo to fir se console chalega kyunki state update ho raha hai to ye didupdate ka hai.<br>
+        kynki abhi tak hum dependency nai lagaye hai useeffect me to wo didmount or didupdate me by default hone ke
+        karan run hoga.<br>
+        ab hum dependency lagayenge useeffect me see lec 26.<br>
+        sab kuchh same rahega bas hum 2 use effect lagayenge or dono pe alag alag dependecies use karenge.<br>
+        pehla useeffect me hum empty array rehne denge dependecies me to wo bas didmount pe run hoga or usko hum console
+        me dekh sakte hai<br>
+        dusre wale me hum dependecies array me count state ko daal denge to wo jab count update hoga to bhi chalega<br>
+    </p>
+    <h2>• useEffect with State and props</h2>
+    <p>just uper explain kiya hai.</p>
+    <h1>useEffect with Specific State and Props </h1>
+    <h2>• What is useEffect</h2>
+    <p>uper explain kiya hai.</p>
+    <h2>• useEffect with Specific state</h2>
+    <p>same pehle jaisa state with name count banao lekin yaha pe 2 state banao ek counr dusra data<br>
+        dono ko update karne ke liye 2 button oe dono button pe onclick event hoga.<br>
+        use effect me hum as a dependecies count ko daal denge to pehli bar did mount pe useeffect call hoga uske bad
+        jab count update hoga to call hoga lekin data ke update hone se call nai hoga kyunki hum usko as a
+        dependency nai dale hai.<br> reference lec 27 . console me check karo.</p>
+    <h2>• useEffect with Specific props</h2>
+    <p>iske liye hume 2 component banana parega ek jaha se prop pass hoga(effectprop28) or dusra jo
+        prop ko accept karega (effectpropchild28). pass hum app.js se bhi kar sakte hai lekin waha fir state bhi declare
+        karna hoga na isliye alag se hi component bana rahe hai<br>
+        parent component me 2 state declare karo count or data naam se or dono ka state change karo return me 2 button
+        bana kar onclick event par.<br>
+        parent component ko app.js me return karo.<br>
+        child component ko parent component ke return me dalo or usme prop pass karo "counter={count} data={data}"<br>
+        ab is props ko child component me recieve karo or h1 tag me show karo.<br>
+        child component me use effect hook banao or props.counter ko dependency me dalo .<br>
+        ab console me dekh sakte ho ki jab counter ka state change ho raha hai to hi bas useeffect call ho raha hai
+        data ke state change hone pe counter nai call ho raha hai.<br>
+        agar hum dependency me kuchh nai dalenge to wo dono ke state change hone pe call hoga<br>
+        may be dout:-- useeffect 2 bar call hoga . pehli bar didmount par or dusri bar counter update par.<br>
+    </p>
+    <h1>Style Type in React js </h1>
+    <h2>• How Many ways we have for style in React js </h2>
+    <p>3 tarike se style kar sakte hai bina bootstrap ya kisi or framework ke bina.<br>
+        1. normal stylesheet <br>2. inlinestyle <br>3. css ka apna module bana kar.</p>
+    <h2>• Use the normal stylesheet </h2>
+    <p>normal stylesheet waisa hi banta hai jaise hum css me banate the.<br>
+        1 style.css ka file bana kar usme different class bana kar usko use kar sakte hai.<br>
+        style 1 of lec 29 we use a file style.css or usme ek primary nam se class banaya hai or usme
+        background color or text ka color dala hai.<br>
+        us primary class ko hum style 1 me use kar rahe hai lekin yaha pe jaise class ko call karne normal
+        css me class likhte the waise yaha clasName likhna parta hai.<br></p>
+    <h2>• Style with the variable or Inline Style</h2>
+    <p>inline css yaha thora different hai. kyunki yaha style = ke bad 2 curlybraces use hota hai
+        pehla jsx ke liye dusra object likhne ke liye jisme hum css property dalte hai.<br>
+        or ikhne ka tarika bhi halka different hai background-color ko direct backgroundcolor likha jata hai.<br>
+        aise : style={{backgroundColor:'black' ,color:'red'}}<br>
+        using it in style2 of lec 29<br>
+    </p>
+    <h2> • CSS with Module.</h2>
+    <p>hum apna custom css ka module bhi bana kar use kar sakte hai.<br>
+        custom css banane ke liye file name ke last me ,module likhna jaruri hai. for example agar hum
+        custom.css naam se file banana chahte hai to likhna parega custom.module.css <br>
+        ab is module ke andar ek success nam se class bana rahe hai or usme kuchh property dal rahe hai similar
+        to normal css.<br>
+        ab isko import karo jaha use karna hai. isko import karne ke liye likhna parega :-
+        import style from filename <br> style ko import kar rahe hai isliye style likhna jaruri hai.<br>
+        iska classname likhne ka tarika thora different hai. isme aise likhte hai classname ko :-<br>
+        className={style.success} <br>
+        style(import hua hai) or curly braces lagana jaruri hai.<br>
+    </p>
+    <h1>Install Bootstrap </h1>
+    <h2>• What is Bootstrap</h2>
+    <p>ye ek css or js ki library hoti hai jo kam time me ek responsive design bana kar deti hai.</p>
+    <h2>• Install Bootstrap</h2>
+    <p>search react bootstrap in google <br>
+        first link pe click karo jo hai https://react-bootstrap.github.io/<br>
+        uper right side me current version dikh jayga usko install karna hai.<br>
+        click on get started . waha install ka link mil jayga usko copy karke terminal ya command pe run kar lo<br>
+        yaha hum 2 chij install kar rahe hai react-bootstrap and bootstrap.<br>
+        ab hame component ko import bhi karna hai. lekin component ko import karne se pehle css ko use karne ka link
+        hame
+        index.js me dalna hoga.. to css ke link ko bootrap ke site se copy karke daal lo index.js me :-
+        import 'bootstrap/dist/css/bootstrap.min.css'; <br>
+        itna karte hi automatic har chij ka style change ho jayga chahe wo font ho ya button . <br>
+        ab jis file/component me kisi bhi bootstrap ke component ko lena hai waha us component ko import kar lenge.
+        aise:- import Button from 'react-bootstrap/Button';<br>
+        // or less ideally
+        import { Button } from 'react-bootstrap';<br></p>
+    <h2>• Use and register bootstrap library </h2>
+    <p>uper bata diya hai ki kaise use karna hai index.js me register karne ke bad.</p>
+    <h2>• Example with bootstrap component</h2>
+    <p>see lec 30 for reference <br>
+        sabse pehle to hum Button ko import karenge react-bootstrap se uske bad pehle khud ka ek button
+        banayenge bina kisi variant ka use kiye jo bootstrap me hota hai.<br>
+        iske butoon me bhi event same hi lagta hai onclick etc,<br>
+        ske bad ek alert component ko bhi import karke use karenge.. usko map se hata kar ek single warning
+        wala alert use karenge.<br>
+    </p>
+    <h1>Handle Array with List in react js</h1>
+    <h2>• Make an array.</h2>
+    <p>see reference lec 31 . <br>
+        sabse pehle ek array bana lo students naam se usme kuchh naam likh do <br>
+        uske bad us array ko iterate karo return se pehle ek bar map use karke or ek bar for loop use karke. dono
+        me kaam kar raha hoga.<br>
+        ab usi ko return statement me daal kar print karwanae ka koshis karo to for loop me error show karega kyunki
+        for loop ka use return me nai kar sakte. unexpected token error dega.<br>
+    </p>
+    <h2>• Why use map function, not for loop. </h2>
+    <p>return statement me hum for loop , whileloop etc use nai kar sakte hai , map,filter,reduce ,sort use
+        kar sakte hai</p>
+    <h2>• Make List with an array.</h2>
+    <p>lec handlearraylist31 me jo hum student array se h1 tag me use karke show kiye hai wahi list hai. </p>
+    <h2>• Make List with an array of objects.</h2>
+    <p>ek array lo User naam se or usme object dal do kuchh as a element . ab us object har propert ko hum list me
+        dalenge yani table me daal kar dekhenge.<br>
+        sabse pehle ek table banao or uske andar map function use karke td me object ka alag alag data ko pass karo
+        jaise name , email ,contact etc. data.name ,data.email, data.contact se. <br>
+        agar hum pura array ke object ko (data) ko fetch karne ka koshis karenge to error aayga .<br>
+        abhi ek error milega : Warning: Each child in a list should have a unique "key" prop.<br>
+        iska solution next me dekhte hai .<br>
+        pata nai table ka border kyu show nai ho raha hai.<br>
+    </p>
+    <h1>List With Bootstrap and Unique Key </h1>
+    <h2>• Make List from array </h2>
+    <p>jaise hum lec31 me array ke andar object ko as a elemnt liye the waise hi same yaha bhi.</p>
+    <h2>• What is Unique key in loop?</h2>
+    <p>lec ref = bootstraparraylist32<br>
+        map se hum tr jo uska child hai usko render kar rahe hai.<br>
+        jab bhi hum kisi list ko render karte hai to react ko usko identify karne ke liye koi unique key chahiye hota
+        hai
+        warna uska jo virtual dom hai wo thik se kam nai kar pata hai.<br>
+        isliye usko ek unique key dena jaruri hai to hum map me index ko as a argument pass karke us index ko tr me as a
+        key pass kar dete hai. is key ke help se hum is error ko handle kar sakte hai.<br>
+        ye key hame console ka source code me nai dikhega <br>
+        key dene se virtual dom har element(list ka) ko update nai karega jo neccasary element hai bas usi ko update
+        karega<br></p>
+    <h2>• Install Bootstrap</h2>
+    <p>pehle dekh chuke hai.. uper likha hua hai.</p>
+    <h2>• Use Bootstrap table with loop.</h2>
+    <p>table ko import karo sabse pehle <br>
+        uske bad ya to pura table copy kar lo waha se nai to apne table ka bas T ko capital kar do.<br>
+        jaise hi T capital karoge waise hi table apne aap bara ho jayga or responsive bhi ho jayga.<br>
+        us table me hum or bhi bootstrap me given style ko use kar sakte hai jaise STRIPPED ,bordered, variant ko bhi
+        dark kar sakte hai etc.<br>
+        hum data ko filter karke bhi show karwa sakte hai table me. manlo ki jiska contact 111 hai wahi dekhna hai to
+        ternary operator ka use karke hum use show karwa sakte hai ki agar condition true hai to dikhao table ka tr
+        nai to null rehne do matlab kuchh mat dikhao.<br></p>
+    <h1>Nested List with Nested Array </h1>
+    <p>nested array ka matlab hua ki array ke andar array.<br>
+        ref:- nestedarraynestedlist33<br>
+        aisa ho sakta hai ki ek insan ke pas 3 ghar ho to hume tino ghar ka adress store karna hoga to main array me jo
+        object banayenge uske adress wale key me hum as a value ek array banayenge or us array me fir se
+        object(kyunki adress me house number,city, country etc hoga na) Pass karke alag alag adress ko store
+        karenge.<br>
+        agar contact number 5 hota to bas ek extra array banate object me lekin adress me ek se jada key
+        hai to array ke andar ek or object banana parega.<br>
+    </p>
+    <h2>• Make Nested Array</h2>
+    <p> const user = [
+        { name: 'vishal', email: 'vishal@test.com', address:[
+        {hn:20 , city:'noida',country:'india'},
+        {hn:30 , city:'delhi',country:'india'},
+        {hn:40 , city:'patna',country:'india'},
+        {hn:50 , city:'pune',country:'india'}
+        ] },
+        { name: 'raj', email: 'raj@test.com', address:[
+        {hn:25 , city:'noida',country:'india'},
+        {hn:35 , city:'delhi',country:'india'},
+        {hn:45 , city:'patna',country:'india'},
+        {hn:55 , city:'pune',country:'india'}
+        ] },
+        { name: 'sonu', email: 'sonu@test.com', address:[
+        {hn:22 , city:'noida',country:'india'},
+        {hn:32 , city:'delhi',country:'india'},
+        {hn:42 , city:'patna',country:'india'},
+        {hn:52 , city:'pune',country:'india'}
+        ] },
+        { name: 'riya', email: 'riya@test.com', address:[
+        {hn:29 , city:'noida',country:'india'},
+        {hn:37 , city:'delhi',country:'india'},
+        {hn:47 , city:'patna',country:'india'},
+        {hn:59 , city:'pune',country:'india'}
+        ] }
+        ]</p>
+    <h2>• Understand Nested Array </h2>
+    <p>1st time user.map se fetch karenge or usme data as a argument pass karenge. <br>
+        usi argument ka use karke data.address.map karke address ke data ko fetch karenge . usme
+        item ko as a argument pass karenge .<br></p>
+    <h2>• Use the Map function</h2>
+    sabse pehle to pehla table banayenge jisme hum tbody ke bad map function laga kar array ke naam , email ko
+    pehle 2 td me fetch karenge arrayname.map se. fir 3rd td ke andar hum dusra table banayenge or uske bhi
+    tbody ke bad map functon lagayenge data.address.map se or fir usko 3 td me pass karke house no, city
+    or country ko fetch karenge.<br>
+    important ye hai ki dono map ke argument ka naam same nai hona chahiye.<br>
+    imp:- hum 3rd td me jaha firse table use kar rahe hai waha rable use na karke bas tr se bhi kaam chalega
+    lekin wo left side me aa jayga . pura area cover nai karega isliye table use karna chahiye.lekin
+    pehle 2nd map se data fetch kar lena fir table badme lagana .. code likhne me aasani hoga.<br>
+    <h2>• Use Nested Map function</h2>
+    <p> sabse pehle to pehla table banayenge jisme hum tbody ke bad map function laga kar array ke naam , email ko
+        pehle 2 td me fetch karenge arrayname.map se. fir 3rd td ke andar hum dusra table banayenge or uske bhi
+        tbody ke bad map functon lagayenge data.address.map se or fir usko 3 td me pass karke house no, city
+        or country ko fetch karenge.<br>
+        MANLO ADDRESS KE ANDAR CONTACT NUMBER HAI WO BHI 1 SE JADA TO USME HUM CONTACT KEY KE VALUE ME EK ARRAY Pass
+        KARENGE OR USKO BHI EK BAR OR NESTED KARKE ACCESS KARENGE<br>
+        note:- sl no. show karne ke liye index ka use kar lenge.<br></p>
+    <h1>How To Reuse Component </h1>
+    <h2>• Make a component</h2>
+    <p>ref: reusecomponent34.js and chhildofreusecomponent34.<br>
+        lec 31 ke jaisa same ek component banao jisme user array ke andar 4 object hai jiska key name,
+        email or contact hai. component ka naam hai reusecomponent34.js<br>
+        ek or component banao childofreusecomponent34.js naam se.
+    </p>
+    <h2>• Make a list from the array</h2>>
+    user.map se reusecomponent34 me uske child component ko render karo . map use karne ke karan wo component
+    4 bar render hoga.<br>
+    <h2>• Use component inside map function</h2>>
+    <p>child component ko user.map me render karna hai jis se wo 4 bar render hoga.<br>
+        user.map me hum item ko as a argument lenge.<br>
+        ab item ko as a prop hum pass karenge child component me jo render ho raha hai parent me. data = {item}<br>
+        or child component me hum ye sab props ko accept karenge span bana kar.
+        props.data.name , props.data.email, props.data.contat se.<br>
+        user array me jo 4 object ka property tha sab mil jayga ek ek karke map fuction ke help se.<br>
+        yahi kaam hum direct bhi kar sakte the child component ko direct app.js me render karke lekin waise me
+        hume 4 bar child component ko render karna parta or charo bar prop ko alag alag se pass karna hota name ,
+        email or contact set karke.<br>
+        student 8 me jaise kiye hai waise .<br>
+        abhi hum map function ka use karke child component ko reuse kar rahe hai or props ko bhi dynamically
+        pass kar rahe hai.<br>
+        app.css me ja kar span ko style bhi kar diye hai.<br>
+        ab is child componenent ko hum chahe to kahi or bhi use kar sakte hai matlab kisi or component me bhi render
+        kar sakte hai.<br><br>
+        question:- manlo ek function banana hai jisme ki hume alert karwana hai or us function ko ek button ke onclick
+        event pe lagana hai. to us function ko hum parent component me banayenge ya child component. ?<br>
+        answer:- function ko hum parent me banayenge or as a props child me bhejenge .<br>
+        agar child me banaye to wo child loop me jitna bar render hoga utna bar function bhi banega jo ki kafi memory
+        lega or time bhi jada lagega. to iska optimization pe effect hota hai. isko optimize karne ke liye function ko
+        humesa parent me banana hai.<br></p>
+    <h1>React Fragment </h1>
+    <h2>• What is React Fragment? </h2>
+    <p>it is used as wrapper to handle multiple element and multiple component.<br>
+        div ke jagah iska use karna chahiye kyunki div alag se space leta hai apna lekin react fragment space nai leta
+        hai.
+        agar hum div hata denge to ek se jada element ya component nai use kar payenge. isliye div ko react
+        fragment se replace kar denge to use kar payenge.<br>
+    </p>
+    <h2>• How to use it?</h2>
+    <p> isko use karne ke 3 taruke hai .<br>
+        1. React ko import karo or < React.Fragment></ React.Fragment> ko use karo as a wrapper.<br>
+        2. React , {Fragment} ko import karo or < Fragment></ Fragment> ko use karo as a wrapper.<br>
+        3. React ko import karo or <> </> blank tag ko use karo as a wrapper. isme sayad jarurat na pare react ko import
+        karne ka. <br></p>
+    <h2>• Use it with child component.</h2>
+    <p>q :- iska actual use kaha hai ? div hi use kar lenge kya dikkat hai? <br>
+        ans :- manlo ki hum 2 component bana rahe hai ek parent or ek child . parent component me hum ek table
+        banye hai jo div se wrap kiya hua hai. manlo ab hum chahte hai ki us table ka jo td wala portion hai
+        usko hum child componet me dal de or child componet ko direct tr ke bad render kar de . td wala portion ko jab
+        hum child component me dalenge to usko bhi wrap karne ke liye div use karna parega. ab child component ko hum
+        parent me render karenge.<br>
+        ab agar hum console me ja kar error check kare to waha error show hoga ki we cant use div after TR . <br>
+        isko handle karne ke liye hum react fragment ka use karenge child component me to error chala jayga . <br>
+        example ke liye video dekh lo 5 ghanta 30 minute se.<br><br>
+        question:- kya hum fragment me css ka class name use kar sakte hai ? <br>
+        answer:- nai class name hum nai le sakte hai . lekin hum KEY le sakte hai.<br>
+        question :- yaha humne child component me fragment use kiya hai to kya child ke sath parent component me
+        bhi fragment use kar sakte hai ? <br>
+        answer :- kar sakte hai.. har ek component me kar sakte hai koi problem nai hai.<br>
+    </p>
+    <h1>Send Data Child to Parent Component (Lifting State Up) </h1>
+    <p>child se parent me data send karne ko lifting state uo bolte hai<br>
+        iske liye hume 2 component banana barega 1 parent dusra child.<br></p>
+    <h2>• Make a child component?</h2>
+    <p>sabse pehle ek parent component banao or ek child component.<br>
+        child component ko parent component me return karwao.</p>
+    <h2>• How Pass Props parent to a child component?</h2>
+    <p>parent me ek function banao jisme alert karwao kuchh bhi pehle to or us function ko as a prop send kar do
+        child me .<br>
+        child me ek button bano or usme onclick event laga kar props (jo function aa raha hai alert ka) usko Call
+        kar lo.<br>
+    </p>
+    <h2>• Send data child to parent?</h2>
+    <p>child me ek variable declare kar do data naam se uska value vishal set kar do .<br>
+        ab jaha onclick event pe hum bas props.alert kar rahe the waha data ko pass kar do yani function ko
+        call kar do jo parent me hai wo bhi data value ke sath. = props.alert(data)<br>
+        kyunki hum function ko call kar rahe hai yaha to onclick pe arrow function use karna parega.<br>
+        ab is data ko parent function me get kar lo :- step 1. pass data as a argument to the function.<br>
+        step 2. argument ko alert me dal do.<br>
+        ab child wala data parent me chala gaya hai .<br>
+        summary:= 1. parent me ek function banao <br>
+        2. child ke onclick event pe wo function ko dalo.
+        3. child me ek variable declare karo or usko on click pe function me call karte samay dal do.<br>
+        ab usko parent me get karo function me as a argument dal kar or alert me us argument me lekar.<br>
+        iske bad hum ek chij or kar rahe hai...<br>
+        parent me ek state define karke initial value null raka hai.. or usko function me setItem kar diya child se
+        aane wala data ko. ab us state ko hum h1 tag me use kar rahe hai. yani child se jo data aaya hai usko parent ke
+        h1 tag me use kar rahe hai.<br>
+        question:- agar hum child component ke andar ek or child banaye to kya parent me joo function hai wo superchild
+        me call ho sakta hai or super child se data grand parent me pass ho sakta hai?<br>
+        answer:- haan ho sakta hai... similarly child or parent me jaise hua tha waise hi super child se bhi kar sakte
+        hai.<br>
+        NOTE:- dusra tarika hai child se parent me data pass karne ka :- redux ya context api ka use kar sakte hai.<br>
+    </p>
+    <h1>Pure Component</h1>
+    <p>reference purecomponent36</p>
+    <h2>• What is Pure Component?</h2>
+    <p>pure component class based component ka ek feature hota hai jisko import karke direct use karte hai.<br>
+        functional component me pure component ka feature use karne ke liye use memo naam ka ek hook hota
+        hai use use karta hai.<br>
+        pure component bina kaa, ke re rendering ko rokta hai. for example agar koi state me naam swt hai vishal usko
+        button ke click pe change kar rahe hai raj. to bar bar click karne pe naam to bas 1st bar change hoga lekin re
+        rendering bar bar hoga.. pure component kya karta hai ki check karta hai previous state ko or current state ko
+        agar dono state same hai to wo rerender nai karta hai.<br>
+
+    </p>
+    <h2>• How to use the Pure component?</h2>
+    <p>use karne ke 2 tarike hai. <br>
+        1. {PureComponent} ko import karke class ko extend kar do PureComponent pe.<br>
+        2. react to import kiya hua hota hi hai to class ko extend kar do React.PureComponent tak<br></p>
+    <h2>• Pure Component example with State</h2>
+    <p>pehle ek normal class based component banao usme constructor me 2 state define karo 1 name naam se dusra count
+        naam
+        se or initial value rakh do vishal and raj. <br>
+        ab render me jo return hai usme 2 h1 tag pe ye dono state ko show karo.<br>
+        ab 2 button banao or 1 button pe name ka state change karo onclick pe or dusre button pe count+1 ka state change
+        karo.<br>
+        render method ke andar console karo 'pure component' . ab console me ja kar check karo ki update count wale
+        button
+        pe click karne pe do re render ho raha hai wo sah hai kyunki count ka state change ho raha hai har bar.<br>
+        lekin jab name wale state ke button pe click kar rahe hai to pehla bar state change hua to re render hua wo sahi
+        hai. lekin 2nd bar click karne pe bhi re render ho raha hai jab ki state change nai ho raha hai . jis se
+        optimization pe fark parega .<br>
+        ab React.component ko React.PureComponent kar do uske bad deho ki wo 2nd time click karne pe name wale button pe
+        to
+        re render nai ho raha hai jabki count wale me baar bar ho raha hai . yahi kaam hai pure component ka ki check
+        karega
+        agar doo state ka value same hai to re render nai karega.<br></p>
+    <h2>• Pure Component example with props?</h2>
+    <p>refrence:- Purecomponentprops37 and Childpurecomponentprops37 .<br>
+        iske liye 2 component banana hoga . ek parent jaha pe child component render hoga or waha se props ko pass
+        karenge.<br>
+        dusra child component jaha hum props ko recieve karenge or h1 tag me show karenge .<br>
+        parent component me state declare karo or button pe onclick event pe uska state change karo .<br>
+        or parent me child component ko render karo import ke bad.. paremt me kuchh show karwana nai hai. show child me
+        hoga
+        sara props.<br>
+        ab parent me jo state declare kiya hai usko as a props pass kar do child me.<br>
+        child me us props ko recieve karke h1 tag me show kar do. <br>
+        kyunki child me state declare nai ho raha hai to constructor function bana ne ka jarurat nai hai child me bas
+        parent
+        me banega.<br>
+        kyunki parent me hum kuchh show nai karwa rahe hai state ya props change pe to use normal component hi rehne
+        dete
+        hai pure component nai banate hai. bas child ko pure component banate hai kyunki waha state change pe hum h1 tag
+        me
+        state ko show karwa rahe hai.<br>
+        child me console karenge render function me "pure componenent with props". or check karenge consoleme to dikhega
+        ki
+        jab props ka value change ho raha hai tab hi render method call ho raha hai. same value rehne pe call nai ho
+        raha
+        hai. data me first time call hoga lekin 2nd time nai kyunki value same hai.<br></p>
+    <h1>useMemo Hook in React js </h1>
+    <h2>• Why use useMemo Hook?</h2>
+    <p>jaise pure component ko class based component me use karte hai waise hi use memo ko functional based component me
+        use karte hai.<br>
+        dono ka kaam ek hi performance ko enhance karna lekin use karne ka tarika alag hai. waha bas purecomponet me
+        extend kar dete the or kaam ho jata tha.<br>
+    </p>
+    <h2> • Understand Problem</h2>
+    <p>reference:- useMemo28 <br>
+        2 staae declare karenge count or data or dono ko button onclick pe state change karenge.<br>
+        ek function banayenge multicount ka jaha return karenge count*5. or ek console lagayenge function called ka <br>
+        3 h1 tag lenge return me 2 data or count ko dalenge or ek h1 me multicount() function ko call karenge .
+        parenthesis() {multicount()}lagana jaruri hai kyunki function ko call kar rahe hai.<br>
+        ab hum console me dekh sakte hai ki jab update count pe click kar rahe hai to count ka value badh raha hai or
+        function multicount ka value bhi padh raha hai or console me function called ka msg bhi aa raha hai.ye to sahi
+        hai ab tak kyunki virtual dom count ka value lega or usko update kar dega to function bhi call ho raha hai or
+        uska value bhi update ho raha hai kyunki waha bhi count hi hai oe onclick pe hum count ka state change kar rahe
+        hai to har wo element update hoga jisme count hai.<br>
+        lekin jab hum update data pe click kar rahe hai to bhi function multicount call ho raha hai uska value update
+        nai ho raha hai lekin function call ho raha hai to ye applicationke performance pe impact dalega kyunki agar
+        function expensive hua to ui block ho jayga har bar call karne se data ke click pe jabki data ka count se koi
+        lena dena nai hai.<br>
+        problem statement yahi hai ki data pe click karne pe bhi wo function call ho raha hai jisme data hai hi nai bas
+        count hai.<br>
+    </p>
+    <h2>• Apply useMemo?</h2>
+    <p>solution ye hai ki use memo bhi use effect ke jaisa ek call back function leta hai as a parameter to waha pe
+        multicount function ko pass kar do . or use memo ko multicount memo variable me dal do . or use memo ka
+        dependencies array me count ko daal do . ab jab bhi count ka state change hoga tabhi use memo call hoga yani
+        multi count function call hoga.<br>
+        or h1 tag me multi count ki jagah multicountmemo variable ko dalana hai. ye variable hai to parenthesis use nai
+        hoga.
+        <br> isko change karke pehle jaisa karke dekh sakte ho lec 38 me direct multicount function ko call karke.<br>
+        yaha par agar count ka setstate ko 2 kar de to ye ek bar hi call hoga multicount uske bad
+        nai kyunki state ka value same hoga to multicount function call nai hoga . same as pure component.<br>
+        so basically hum keh sakte hai ki use memo se hum kisi bhi function ko koi particular dependency state ya prop
+        pe re render kar sakte hai yani bar bar re render hone se rok sakte hai .or wo bhi tab hi re render hoga jab
+        state ya prop ka value change hoga , agar value same raha to re render nai hoga.<br>
+    </p>
+    <h1>Ref in React js </h1>
+    <p>reference Ref39</p>
+    <h2>• Why use Ref</h2>
+    <p>react js khud bolta hai ki ref ko kam se kam use karna hai.<br>
+        react js bolta hai ki directly dom ko manipulate mat karo nai to application slow ho jati hai. state , props ka
+        use karke kam karo.<br>
+        ref directly dom ko manipulate kar sakta hai. (hide show direcly kar sakta hai, style change kar sakta hai etc.)
+        or react js bolta hai ki directly dom ko manipulate nai karna . <br>
+        matlab ye hai ki ref ko ekdam emergency ke time hi use karna hai jab ref ke bina kam na chale tab hi use karna
+        hai.<br>
+        basically iska use forms ke sath karte hain. kyunki value bhi get karni hai , validation bhi lagani hai, or
+        color
+        bhi change karna hai. to ye iska ek use case hua.<br>
+    </p>
+    <h2>• Make Class Component?</h2>
+    <p>Ref 39 naam se 1 class based component banao.</p>
+    <h2> • Ref use with example</h2>
+    <p>sabse pehle createReaf ko import karo .<br>
+        uske bad ek inputRef naam se constructor pe ref ko create karo.<br>
+        ab us ref ko input me use karo. Ref={this.inputRef}<br>
+        ab component didmount me this.inputref karo to console me current milega . us current ke down arrow pe click
+        karo to bahut sara method milega wo sab ko use kar sakte hai.<br>
+        ab getData naam ka 1 method banao or us method se aap this.inputRef.current.value karoge to button ke onclick pe
+        input me dala hua value milega. hum value ko manually bhi set kar sakte hai.<br>
+        yaha current ka matlab hua input me jo bhi likha jayga jayga uska current state. .<br>
+        isi tarah hum style bhi change kar sakte hai.<br>
+        this.inputRef.current.style.color="red";<br>
+        this.inputRef.current.style.backgroundColor="black";<br>
+        <br>
+        question : kya hum 1 component me 1 se jada ref use kar sakte hai .?<br>
+        answer:- <br>
+        question : kya hum 1 ELEMENT me 1 se jada ref use kar sakte hai .?<br>
+        answer:- <br>
+    </p>
+    <h1>useRef in React js </h1>
+    <p>reference:- useRef40.js</p>
+    <h2>• Why use useRef</h2>
+    <p>useRef ek hook hai jo createRef ke features ko functional component me use karne deta hai.<br>
+        use ref ka istemal hum dom manipulation ke liye karte hai. kai bar state ya props se kaam nai chalta hai.
+        hume dom ko manipulate karna hi parta hai.. some use cases are input ki value get karna , element ka style
+        change karna, auoto focus lagana etc. <br>
+    </p>
+    <h2> • Ref use with example</h2>
+    <p>sabse pehle ek functional component bana lo normal sa or uske return me ek input daal do .<br>
+        ab use ref hook ko use karne ke liye pehle use import kar lo.<br>
+        ab ek variable declare kar lo or usme useRef ka initial value null set kar do jaise usestate ko karte ho.<br>
+        ab input me is variable ko use kar lo ek property hota hai 'ref' nam se uska use karke.<br>
+        < input type="text" ref={inputRef} /><br>
+        kyunki ab hum ref property ka use karke inputRef(jo useRef ka initial value hold kiya hua hai) ko input me daal
+        diye hai to ab hum iska jaise man waise use kar sakte hai input element ko handle karne ke liye.<br>
+    </p>
+    <h2>• Focus, color, value etc handle with useRef.</h2>
+    <p>fixing a value : hum koi bhi value is input me daal sakte hai. :- <br>
+        inputRef.current.value='1000';<br>
+        color change kar sakte hai input ke text ka :- <br>
+        inputRef.current.style.color='green'<br>
+        us input box par auto focus rakh sakte hai. achha auto focus ek method hai na ki property to () use karna
+        parega. :- <br>
+        inputRef.current.focus();<br>
+        background color bhi change kar sakte hai input ka.<br>
+        input ko hide kar sakte hai display none karke :-<br>
+        inputRef.current.style.diplay='none';<br>
+        agar hume input ke value ko show karwana hai h1 me ya kahi or to hum state ka use kar sakte hai . state ka
+        initial state null rako or function ke andar set state ko inputRef.current.value kar do ot fir us state ko h1
+        tag me use kar lo.<br>
+        agar input ke text ke color ko hi h1 tag me jo value dikh raha hai usme bhi wahi color schahiye to fir se ek
+        state bana lo colors naam se or function me set state kar do inputref.curren.style.color='green'. or us state ko
+        as value of color property use kar lo inline css ke help se. lekin jab as a color value usko use karenge to {}
+        nai lagana hai inline css me<br>
+    </p>
+    <h1>forwardRef in React js </h1>
+    <p>reference:- forwardref41 and childforwardref41</p>
+    <h2>• Why use forward Ref.</h2>
+    <p>use Ref ke madad se hum dom manipulate kar rahe the ek button click par lekin jis element ka dom manipulate kar
+        rahe the wo or button dono ek hi component me tha. agar man lo ki hum ek child component banate hai or us child
+        component ke kisi element ka dom manipulate karna hai parent component se to hum forwardRef ka use karte
+        hai.<br>matlab input box child me hai or button parent me, ab hume button click pe input ka dom manipulate karna
+        hai.<br>
+        iske liye jaise hum msg forward karte hai waise hi ref ko bhi parent se child me forward kar dete hai..
+        hahaha.<br>
+    </p>
+    <h2>• Make Child Component.</h2>
+    <p>sabse pehle ek parent component banao forward ref naam se or usme button ko return karo.<br>
+        uske bad ek child component banao childforwardref naam se uske bad usme ek input box return karo.<br>
+        ab child component ko parent me button se uper render karo.<br>
+        ab use ref ko import karo or usko inuptRef naam ke variable me use karo. <br>
+        ab is inputRef ko child component me ref property ka use karke props ke jaisa kar do.<br>
+        ref={inputRef} . jo kaam pehle hum direct input box me karte the wo ab child component me kar rahe hai.<br>
+    </p>
+    <h2>• Pass Ref with props and use it.</h2>
+    <p>ref ko props ke jaisa pass karna hum abhi dekhe hai. ab usko child component me use karenge.<br>
+        sabse pehle forwardRef ko import karo . uske bad jo bhi exportdefault me hai usko forwarref(function name) me
+        daal do. forward ref ko hum as a wrapper use kar rahe hai function ka.<br>
+        ab isko use karne ke liye child component ke function me 2 argument pass karna parega . <br>
+        1. props/prop o bhi naam se kyunki hum ref ko as a props pass kar rahe hai.<br>
+        2. ref (koi bhi naam le sakte hai). usko hum input me daalenge as a value of ref property..<br>
+        ref={koi bhi naam jo as a 2nd parameter pass kiya hai child function me}.<br>
+        note:- props ko bhi pass karna ekdam jaruri hai.<br><br>
+        question:-yaha humne dono functional component use kiye hai. agar yaha class component hota to hume kya changes
+        karne parte ? jaise yaha forward ref hook use kiye hai waha kya karte ?<br>
+        answer :- similar tarika rahega class component ka bhi . waha bhi hum export default me jo class ka naam likhe
+        hai usko wrap kardenge React.forwardRef(function name) me. baki sab same rahega . waha hum froward ref ko import
+        nai kar rahe to React.forwardRef ka use kar rahe hai.<br>
+    </p>
+    <h1>Controlled Component </h1>
+    <p>Reference= Controlled component42 . <br>
+        kabhi bhi koi puchhe ki controlled component kya hai or Uncontrolled component kya hai to aapko ye baat pata
+        honi chahiye ki us component me input field hai ya ek form hai jisme 1 se jada input field hai.<br>
+    </p>
+    <h2>• What is controlled component?</h2>
+    <p>react me jo input fields state ka use karke control ki jati hai use controlled component kehte hai. <br>
+        or jo input field ko directly dom manipulate karke control ki jati hai use uncontrolled component kehte hai.<br>
+        react me dom manipulate karne ke liye hum useRef ka istemal karte hai to hum keh sakte hai ki input ref se jo
+        input field ko control kiya jata hia wo uncontrolled componennt kehlata hai.<br>
+    </p>
+    <h2>• Make Component.</h2>
+    <p> sabse pehle ek component banao controlledcomponent42 naam se uske bad usme ek input box return karwao . <br>
+        ab is input box me hum jo bhi likhenge use bahar kaise use karna hai wo hum state ki madad se kar sakte hai ya
+        input
+        ref ki madad se kar sakte hai. controlled component me hum use state ki madad se karte hai.<br>
+        agar input box me value="100" daal diye to wo uska fixed value ho jayga . usko change nai karsakte hai.
+        backspace
+        bhi kaam nai karega . hume use hi handle karna hai. <br>
+        usko handle karne ke liye hum ek satate banayenge val naam se or uska default value empty string rakhenge or is
+        val
+        state ko input ke value me set kar denge.<br>
+        value={val}. ab hum input value me kuchh type nai kar payenge kyunki uska default value val ke barabar hai jo ki
+        ek
+        empty string hai.<br>
+        isko change karne ke liye hum onchange event ka istemal karke val ka state ko set kardenge e.target.value se to
+        ab
+        hum us input box me type kar payenge.<br>
+        defaultValue={111} ko value ki jagah isko bhi use kar sakte hai . ya fir 111 ko val ke initial state me
+        bhi dal sakte hai. lekin value oe default value dono ko ek sath use nai kar sakte hai.<br>
+        NOTE:- agar input box me jo bhi likha hai usko click karne ke bad mita dena hai to onclick event pe val ko
+        empty string ya null se set kar do.<br>
+        yaha hum item naam se bhi ek state le rahe hai onclick pe input ke value ko show karwane ke liye.<br>
+        achha hum kisi state ko set karte time usme string bhi set kar sakte hai jaise setItem me kiya hai.<br>
+        yaha getData function me hum val ko emptystring set kar diye hai or onclick pe is function ko call kar rahe hai,
+        jis se ki click hote hi input me jo bhi lika hai wo khali ho jayga.<br></p>
+    <h2>• Example of controlled Component.</h2>
+    <p>ref:- lec 42<br>
+        abhi hum uper dekhe ki input box me jo bhi likh rahe hai usko hum kaise only state ka use karke handle kiye
+        input
+        box ke bahar use karne ke liye. yahi controlled component ka example hai.<br>
+        <br>
+        question:- kya hum controlled component ko class component me bhi use kar sakte hai ?<br>
+        answer:-haan kar sakte hai. controlled or umcontrolled component dono hi class or functional dono component ke
+        sath use kar sakte hai.<br>
+    </p>
+    <h1>Uncontrolled Component </h1>
+    <p>reference:- uncontrolled component43.</p>
+    <h2>• What is uncontrolled component?</h2>
+    <p>jab bhi koi input field ya form directly state se control nai kiya jata hai. yani ki directly dom manipulate
+        karke
+        kiya jata hai ya to useref se ya javascript se to use uncontrolled component kehte hai.<br>
+        1. pehla tarika useref se . 2. dusra tarika javascript se dom manipulate karna.
+    <h2>• Make Component.</h2>
+    sabse pehle ek uncontrolledcomponent43 naam se component banao or usme ek form ko return kar do jisme 3 input box or
+    ek submit button hai <br>
+    NOTE:- advantage of inputref :- ye hai ki ye render nai karta hai dom ko to agar hume koi small changes karna ho to
+    wo hum input ref ke help se kar sakte hai jis se ki re rendering nai hoga.<br>
+    </p>
+    <h2>• Example of uncontrolled Component.</h2>
+    <p>ab sabse pehle refresh na ho pahe submit pe uske liye ek function banayenge submitForm() naam se , usme
+        e.preventDefault() kar denge or usko onclick pe laga denge preventDefault ek function hai to parenthesis use
+        karna parega. jab tak prevent default use nai karenge tab tak wo refresh hoga submit karne par.<br>
+        ab useRef ko import karenge or 2 instance banayenge useRef ka inputRef1 and inputRef2.<br>
+        form ke andar jo input hai usme pehle 2 me ye 2 instance ko set kar ref property ke madad se ref={inputRef1}<br>
+        ab ye dono input ko hum control kar sakte hai inputRef 1&2 se.<br>
+        ab submitForm function me hum inputRef1.current.value or inputRef2.current.value ko console log karenge. or dono
+        input field me kuchh likh kar submit kar ke dekehenge ki console me value aa raha hai ya nai. value aa
+        jayga.<br>
+        ab 3rd input me hum javascript se dom manipulate karenge.<br>
+        uske liye 3rd input ko ek id de denge input3 naam se or submitform function me usko id se get karke uska value
+        le
+        lenge. or ek input 3 naam ka variable me store kar denge.<br>
+        ab us variable ko console kar denge.<br>
+        ab teeno input me kuchh likh kar submit karke dekhenge ki value aa raha hai ya nai console me. value aa raha
+        hoga.<br>
+        to aise hum uncontrolled component bana sakte hai input ref se or direct dom manipulate kar ke.<br>
+        inputRef ke value ko bhi hum variable me store karke kahi bhi h1 tag me use kar sakte hai.<br> <br>
+        question:- agar ek form mr hum 2-3 input ko state se control kar rahe hai or 2-3 input ko useRef ya direct
+        javascript se dom manipulate karke control kar rahe hai to wo kya kehlayga ? controlled or uncontrolled
+        component<br>
+        answer:-<br></p>
+    <pre>
+    40. (6:16:40​) useRef in react functional component
+    41. (6:24:02​) React js forward ref
+    42. (6:32:12​) React js Controlled Component
+    43. (6:40:00​) React js Uncontrolled Component
+    44. (6:48:40​) React js High order component
+    45. (6:59:11​) React js Routing basic
+    46. (7:08:04​) React js Routing example
+    47. (7:18:46​) 404 page in react routing
+    48. (7:27:48​) React js Dynamic routing
+    49. (7:40:50​) React js Call Get Method API- HTTP call
+    50. (7:50:82​) What is postman
+    51. (8:00:14​) How to call post method API in react js
+    52. (8:18:34​) React js delete method API
+    53. (8:28:22​) React js pre-filled form
+    54. (8:36:35​) React js update API method
+    55. (8:47:17​) React js get the previous state in the functional component
+    56. (8:59:46​) get previous props in react js with hooks
+    57. (9:09:54​) Context API in react js
+    58. (9:30:17​) React js interview Questi\ons
+    </pre>
+</body>
+
+</html>
+// write a composition funtion to handle array of n async fns?
+
+const sqaureAsync = (number, cb) => {
+setTimeout(() => {
+return cb(number * number)
+}, 1000)
+}
+const sqaureAsyncPromise = (number) => {
+return new promise((resolve, reject) => {
+sqaureAsync(number, (result) => return resolve())
+})
+}
+const sqaureAsyncArray = [sqaureAsync, sqaureAsync, sqaureAsync]
+
+// compositeSqaureFn(2, sqaureAsyncArray) ==> prints 256 after 3seconds
+// composition function = f(g(h(x)))
